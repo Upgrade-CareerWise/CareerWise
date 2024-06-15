@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>CareerWise</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="./css/index.css" rel="stylesheet">
+    <!-- <link href="./css/demo.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="./images/careerwisefavicon.png" type="image" />
+    <link href="./css/intlTelInput.css" rel="stylesheet">
+   
+   
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="slides slide1">
+            <div class="row text-center">
+                <div class="col">
+                    <img src="/images/pic-1.png" alt="">
+                </div>
+                <div class="col">
+                    <h2>Welcome to CareerWise</h2>
+                    <h5>Where we nurture careers.</h5>
+                </div>
+            </div>
+          
+           
+        </div>
+        <div class="slides slide2">
+            <div class="row text-center">
+                <div class="col text-md-start">
+                    <h2>We help you grow your Career...</h2>
+                    <h5>through mentorship & creating connections.</h5>
+                </div>
+                <div class="col justify-content-center align-items-center">
+                    
+                    <div class="pulse">
+                        <span style="--i:1;"></span>
+                        <span style="--i:2;"></span>
+                        <span style="--i:3;"></span>
+                        <span style="--i:4;"></span>
+                        <span style="--i:5;"></span>
+
+                        <div class="rocket">
+                            <img src="/images/gretsa1.png" alt="">
+                        </div>
+                     
+                    </div>
+                </div>
+            </div>
+            
+           
+        </div>
+        <div class="slides slide3">
+            <div class="row space-between text-center">
+                <div class="col">
+                    <img src="/images/jointeam.jpg" alt="">
+                </div>
+                <div class="col">
+                    <h2>Join our team today!</h2>
+                    
+                    <div class="login-box">
+                        <form method="post" action="https://script.google.com/macros/s/AKfycbwc1Y_OpAALF7ambLCJ4EFfh8bOvGL8koYNvAcfjnJpYGpGIndZfsVh8A83q306JYu7/exec" id="contactForm"  target="hidden_iframe" onsubmit="formSubmitted(event);">
+                            <h4 class="mt-5"><b>Become</b> a mentor or <b>get</b> one.</h4>
+                            <div class="input-box">
+                                <span class="icon"></span>
+                                <input type="text" name="name" id="name" required>
+                                <label for="name">Name</label>
+                            </div>
+                            <div class="input-box">
+                                <span class="icon"></span>
+                                <input type="tel" name="contact" id="phone" required>
+                                <label for="contact">Phone</label>
+                            </div>
+                            <div class="input-box">
+                                <select class="" id="usertype" name="usertype" required>
+                                    <option value="select" selected disabled></option>
+                                    <option value="mentor">I am a mentor.</option>
+                                    <option value="student">I need mentoring.</option>
+                                </select>
+                            </div>
+                            <button class="mb-5" id="submitBtn">Submit</button>
+                        </form>
+                            <!-- Hidden iframe to handle form submission -->
+                <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="iframeLoaded()"></iframe>
+                    </div>
+                </div>
+            </div>
+           
+          
+        </div>
+    </div>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+
+    <script src="/js/intlTelInput.js"></script>
+
+    <script>
+        var tel = document.querySelector("#iphone");
+        window.intlTelInput(tel, {});
+    </script>
+
+    <script>
+        var submitted = false;
+ 
+ function formSubmitted(event) {
+     submitted = true;
+ 
+     // Change button to 'Sending' state
+     var submitBtn = document.getElementById('submitBtn');
+     submitBtn.disabled = true; // Disable the button to prevent multiple submissions
+     submitBtn.innerHTML = '<i class="fa fa-spinner fa-spin"></i> Submitting ...';
+     submitBtn.classList.remove('btn-success');
+     submitBtn.classList.add('btn-secondary');
+ }
+ 
+ function iframeLoaded() {
+     if (submitted) {
+         submitted = false; // Reset the flag
+ 
+         // Alert the user
+         alert('Your details have been successfully submitted.');
+ 
+         // Reset the button to its original state
+         var submitBtn = document.getElementById('submitBtn');
+         submitBtn.disabled = false; // Re-enable the button
+         submitBtn.innerHTML = 'Submit';
+         submitBtn.classList.remove('btn-secondary');
+         submitBtn.classList.add('btn-success');
+ 
+         // Redirect to the home page
+         window.location.href = '/';
+     }
+ }
+     </script
+</body>
+</html>

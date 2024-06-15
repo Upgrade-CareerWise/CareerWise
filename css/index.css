@@ -1,0 +1,196 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+.iti__hide {
+    display: none; }
+
+  
+
+.container-fluid {
+    height: 100vh;
+    width: 100%;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+}
+
+.slides {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #fff;
+    scroll-snap-align: start;
+   
+}
+
+.slides img {
+    width: 350px;
+
+}
+
+.slides h2 {
+    font-size: 3em;
+    font-weight: 600;
+    max-width: 650px;
+}
+
+.slide1 {
+    /* background: linear-gradient(454deg, #4f4080, #9553ff); */
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+}
+
+.slide2 {
+    /* background: linear-gradient(454deg, #404c80, #53ff88); */
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,255,38,1) 0%, rgba(13,179,64,1) 38%, rgba(41,9,121,1) 100%);
+}
+.slide3 {
+    /* background: linear-gradient(454deg, #9574ff, #ff5353); */
+    background: rgb(179,27,13);
+    background: linear-gradient(90deg, rgba(179,27,13,1) 38%, rgba(41,9,121,1) 100%);
+}
+
+.login-box {
+    position: relative;
+   
+    height: 300px;
+    background: transparent;
+    border: 2px solid rgba(255,255,255, .5);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+.input-box {
+    position: relative;
+    width: 310px;
+    margin: 30px 0;
+    border-bottom: 2px solid #fff;
+}
+
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    pointer-events: none;
+    transition: .5s;
+    margin-bottom: 10px;
+
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label {
+    top : -5px;
+}
+.input-box input, select {
+    width: 100%;
+    height:30px;
+    background: transparent;
+    border:none;
+    outline: none;
+    font-size: 1em;
+    color: #fff;
+    padding: 0 35px 0 5px;
+}
+
+select option {
+   
+    color: #000;
+}
+.input-box icon {
+    position: absolute;
+    right: 8px;
+    color: #fff;
+    font-size: 1.2em;
+    line-height: 57px;
+}
+
+button {
+    width: 100%;
+    height: 40px;
+    background: #fff;
+    border: none;
+    border-radius: 24px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #000;
+    font-weight: 500;
+}
+
+@media (max-width: 360px) {
+    .login-box {
+        width: 100%;
+        border: none;
+        border-radius: none;
+    }
+
+}
+.pulse {
+    position: relative;
+    width: 200px;
+    height: 200px;
+   
+    border-radius: 50%;
+}
+
+.pulse span {
+    position: absolute;
+    top: 20%;
+    left: 60%;
+    background: #fff;
+    border-radius: 50%;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    animation: animate 5s linear infinite;
+    animation-delay: calc(-0.5s * var(--i));
+}
+
+@keyframes animate {
+    0% {
+        transform: scale(1);
+        opacity: 0.5;
+    }90% {
+        transform: scale(3);
+    }
+    100% {
+        transform: scale(4);
+        opacity: 0;
+    }
+
+}
+
+.rocket {
+    position: absolute;
+    top: 0%;
+    left: 20%;
+    text-align: center;
+    animation: rocket 0.1s ease infinite;
+}
+
+@keyframes rocket {
+    0%,100% {
+        transform: translateY(-1px);
+        
+    }50% {
+        transform: translateY(1px);
+    }
+}
+/* .rocket::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+} */
